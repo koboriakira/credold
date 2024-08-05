@@ -21,7 +21,7 @@ class S3Storage(Storage):
         self,
         bucket_name: str,
         key: str = "s3_storage.json",
-        dir: str | None = None,
+        dir_: str | None = None,
         region_name: str | None = None,
         profile_name: str | None = None,
         endpoint_url: str | None = None,
@@ -30,7 +30,7 @@ class S3Storage(Storage):
             boto3.setup_default_session(profile_name=profile_name)
         self._s3_client = _get_client(region_name=region_name, endpoint_url=endpoint_url)
         self._key = key
-        self._dir = dir
+        self._dir = dir_
         self._bucket_name = bucket_name
 
     @staticmethod
@@ -66,7 +66,6 @@ class S3Storage(Storage):
                 path.resolve(),
             )
             with path.open() as f:
-                print(f)
                 return json.load(f)
         except ClientError as e:
             error_code = e.response["Error"]["Code"]
@@ -79,5 +78,6 @@ class S3Storage(Storage):
 
     def _path(self) -> Path:
         if self._dir:
-            return Path(self._dir) / self._key
+            dir_ = self._dir if self._dir.startswith("/") else f"/{self._dir}"
+            return Path(dir_) / self._key
         return Path(self._key)
