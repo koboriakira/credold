@@ -3,3 +3,6 @@ __pycache__
 *.log
 volume
 s3_storage.json
+dist
+build
+*.egg-info

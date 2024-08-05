@@ -8,6 +8,8 @@ python_version = "3.12"
 
 [dev-packages]
 pytest = "*"
+setuptools = "*"
+twine = "*"
 
 [packages]
 boto3 = "*"

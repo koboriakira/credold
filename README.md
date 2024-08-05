@@ -28,3 +28,15 @@ aws --endpoint-url=http://localhost:4567 --profile localstack s3 mb s3://credold
 # バケット一覧表示
 aws --endpoint-url=http://localhost:4567 --profile localstack s3 ls
 ```
+
+## PyPi
+
+`pip install twine` が完了しており、`~/.pypirc`がある状態で、以下を実行
+
+```shell
+python setup.py sdist bdist_wheel
+# テスト
+twine upload --repository pypitest dist/*
+# 本番
+twine upload dist/*
+```
