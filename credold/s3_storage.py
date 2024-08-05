@@ -3,7 +3,6 @@ from pathlib import Path
 
 import boto3
 from botocore.exceptions import ClientError
-
 from storage import Storage
 
 
@@ -42,7 +41,7 @@ class S3Storage(Storage):
         return S3Storage(
             bucket_name=bucket_name,
             key=key,
-            dir=dir_,
+            dir_=dir_,
             profile_name="localstack",
             region_name="ap-northeast-1",
             endpoint_url="http://localhost:4567",

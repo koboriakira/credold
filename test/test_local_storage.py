@@ -1,7 +1,7 @@
 from pathlib import Path
 from unittest import TestCase
 
-from src.local_storage import LocalStorage
+from credold.local_storage import LocalStorage
 
 DUMMY_DATA = {"token": "dummy"}
 

@@ -1,7 +1,7 @@
 from typing import Any
 
-from local_storage import LocalStorage
-from s3_storage import S3Storage
+from credold.local_storage import LocalStorage
+from credold.s3_storage import S3Storage
 
 
 class Credold:

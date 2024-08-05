@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from src.storage import Storage
+from credold.storage import Storage
 
 
 class LocalStorage(Storage):

@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from src.s3_storage import S3Storage
+from credold.s3_storage import S3Storage
 
 DUMMY_DATA = {"token": "dummy"}
 
