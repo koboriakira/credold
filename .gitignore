@@ -1,3 +1,5 @@
 __pycache__
 .env
 *.log
+volume
+s3_storage.json
